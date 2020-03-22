@@ -70,7 +70,7 @@
                 <br>
                 <p> {{ content.question_5.question_text }}</p>
                 <select id="local risk" name="response_{{ content['question_5']['id']}}">
-                    {% for option in content.question_3.answers %}
+                    {% for option in content.question_5.answers %}
                         <option> {{option}} </option>
                     {%endfor%}
                 </select>
