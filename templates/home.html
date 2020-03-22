@@ -76,35 +76,29 @@
                 </select>
                 <br>
                 <br>
-                <input type="submit">
-        </form>
-        <br>
-    <!-- Activity form -->
-        <form action="" method="post">
-    <!-- Specific activity -->
-            <p> {{ content.question_6.question_text }}</p>
-            <select id="action" name="response_{{ content['question_6']['id']}}">
-                {% for option in content.question_6.answers %}
+
+        <!-- Specific activity -->
+                <p> {{ content.question_6.question_text }}</p>
+                <select id="action" name="response_{{ content['question_6']['id']}}">
+                    {% for option in content.question_6.answers %}
+                            <option> {{option}} </option>
+                    {%endfor%}
+                </select>
+                <br>
+        <!-- Activity duration -->
+                  <br>
+                  <p> {{ content.question_7.question_text }}</p>
+                  <select id="duration" name="response_{{ content['question_6']['id']}}">
+                    {% for option in content.question_7.answers %}
                         <option> {{option}} </option>
-                {%endfor%}
-            </select>
-            <br>
-    <!-- Activity duration -->
-              <br>
-              <p> {{ content.question_7.question_text }}</p>
-              <select id="duration" name="response_{{ content['question_6']['id']}}">
-                {% for option in content.question_7.answers %}
-                    <option> {{option}} </option>
-                {%endfor%}
-              </select>
-              <br>
-              <br>
-              <input type="submit">
-        </form>
+                    {%endfor%}
+                  </select>
+                  <br>
+                  <br>
+                  <input type="submit">
+            </form>
 
-        <br>
 
-        <br>
     
 
     </div>
