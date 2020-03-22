@@ -18,19 +18,83 @@
 
 <body>
     <div class="questions">
+
+    <!-- profile form -->
+    <form action="" method="post">
+        <!-- Age -->
+                <p> {{ content.question_1.question_text }}</p>
+                <select id="age" name="response_{{ content['question_1']['id']}}">
+                    {% for option in content.question_1.answers %}
+                        <option> {{option}} </option>
+                    {%endfor%}
+                </select>
+                <br>
+        <!-- Gender -->
+                <p> {{ content.question_2.question_text }}</p>
+                <br>
+                <input type="radio" id="male" name="response_{{ content['question_2']['id']}}" value="male">
+                <label for="male">Male</label><br>
+                <input type="radio" id="female" name="response_{{ content['question_2']['id']}}"value="female">
+                <label for="female">Female</label><br>
+        <!-- Medical risk -->
+                <p> {{ content.question_3.question_text }}</p>
+                <select id="medical risk" name="response_{{ content['question_3']['id']}}">
+                    {% for option in content.question_3.answers %}
+                        <option> {{option}} </option>
+                    {%endfor%}
+                </select>
+                <br>
+     
+        <!-- Symptoms -->
+                <p> {{ content.question_4.question_text }}</p>
+                <br>
+                <!-- <input type="checkbox" id="Symptom1" value="None" name="response_{{ content['question_4']['id']}}">
+                <label for="Symptom1"> None </label><br>
+                <input type="checkbox" id="Symptom2" value="acute onset cough" name="response_{{ content['question_4']['id']}}">
+                <label for="Symptom"> acute onset cough</label><br>
+                <input type="checkbox" id="Symptom3" value="shortness of breath" name="response_{{ content['question_4']['id']}}">
+                <label for="Symptom3"> shortness of breath</label><br>
+                <input type="checkbox" id="Symptom4" value="fatigue" name="response_{{ content['question_4']['id']}}">
+                <label for="Symptom4"> fatigue</label><br>
+                <input type="checkbox" id="Symptom5" value="muscle aches/pains" name="response_{{ content['question_4']['id']}}">
+                <label for="Symptom5"> muscle aches/pains</label><br> -->
+                <p> {{ content.question_4.question_text }}</p>
+                <br>
+                <select id="action" name="response_{{ content['question_4']['id']}}">
+                    {% for option in content.question_4.answers %}
+                            <option> {{option}} </option>
+                    {%endfor%}
+                </select>
+    
+                <input type="submit">
+
+            <!-- Local Risk -->
+                <p> {{ content.question_3.question_text }}</p>
+                <select id="local risk" name="response_{{ content['question_5']['id']}}">
+                    {% for option in content.question_3.answers %}
+                        <option> {{option}} </option>
+                    {%endfor%}
+                </select>
+            </form>
+
     <!-- Activity form -->
         <form action="" method="post">
     <!-- Specific activity -->
-            Activity:
-            <select id="action" name="response_{{ content['question_1']['id']}}">
-                <option>House party</option>
-                <option>Run</option>
-                <option>groccery shopping</option>
+            <p> {{ content.question_6.question_text }}</p>
+            <br>
+            <select id="action" name="response_{{ content['question_6']['id']}}">
+                {% for option in content.question_6.answers %}
+                        <option> {{option}} </option>
+                {%endfor%}
             </select>
     <!-- Activity duration -->
               <br>
-              Duration:
-              <select id="duration" name="response_{{ content['question_2']['id']}}">
+              <p> {{ content.question_7.question_text }}</p>
+              <br>
+              <select id="duration" name="response_{{ content['question_6']['id']}}">
+                {% for option in content.question_7.answers %}
+                    <option> {{option}} </option>
+                {%endfor%}
               </select>
               <br>
               <input type="submit">
@@ -39,69 +103,30 @@
         <br>
 
         <br>
-    <!-- profile form -->
-        <form action="" method="post">
-    <!-- Age -->
-            Age:
-            <select id="age" name="response_{{ content['question_3']['id']}}">
-            </select>
-            <br>
-    <!-- Gender -->
-            Gender:
-            <br>
-            <input type="radio" id="male" name="response_{{ content['question_4']['id']}}" value="male">
-            <label for="male">Male</label><br>
-            <input type="radio" id="female" name="response_{{ content['question_4']['id']}}"value="female">
-            <label for="female">Female</label><br>
-    <!-- Medical risk -->
-            Medical Risk:
-            <select id="medical risk" name="response_{{ content['question_5']['id']}}">
-                <option>None</option>
-                <option>Type 1 Diabetes</option>
-                <option>Type 2 Diabetes</option>
-                <option>Cancer</option>
-            </select>
-            <br>
-           
-    <!-- Symptoms -->
-            Symptoms:
-            <br>
-            <input type="checkbox" id="Symptom1" value="None" name="response_{{ content['question_6']['id']}}">
-            <label for="Symptom1"> None </label><br>
-            <input type="checkbox" id="Symptom2" value="acute onset cough" name="response_{{ content['question_6']['id']}}">
-            <label for="Symptom"> acute onset cough</label><br>
-            <input type="checkbox" id="Symptom3" value="shortness of breath" name="response_{{ content['question_6']['id']}}">
-            <label for="Symptom3"> shortness of breath</label><br>
-            <input type="checkbox" id="Symptom4" value="fatigue" name="response_{{ content['question_6']['id']}}">
-            <label for="Symptom4"> fatigue</label><br>
-            <input type="checkbox" id="Symptom5" value="muscle aches/pains" name="response_{{ content['question_6']['id']}}">
-            <label for="Symptom5"> muscle aches/pains</label><br>
-
-            <input type="submit">
-        </form>
+    
 
     </div>
 
 
     <script>
 
-        function age(){
-            var select = '';
-            for (i=1;i<=100;i++){
-                select += '<option val=' + i + '>' + i + '</option>';
-            }
-            document.getElementById("age").innerHTML = select;
-        }
+        // function age(){
+        //     var select = '';
+        //     for (i=1;i<=100;i++){
+        //         select += '<option val=' + i + '>' + i + '</option>';
+        //     }
+        //     document.getElementById("age").innerHTML = select;
+        // }
     
-        function duration(){
-            var temp ="";
-            for (i=10;i<=60;i= i+10){
-                temp += '<option val="{{request.form.duration}}">' + i + '</option>';
-            }
-            document.getElementById("duration").innerHTML = temp;
-        }
-        age();
-        duration();
+        // function duration(){
+        //     var temp ="";
+        //     for (i=10;i<=60;i= i+10){
+        //         temp += '<option val="{{request.form.duration}}">' + i + '</option>';
+        //     }
+        //     document.getElementById("duration").innerHTML = temp;
+        // }
+        // age();
+        // duration();
         
     
     </script>
