@@ -7,6 +7,8 @@ app=Flask(__name__)
 @app.route("/", methods=["GET","POST"])
 def home():
     # Activity form
+    user = main.User()
+    decision = main.Decision()
     test_dict = {}
     user_question_list = utils.json_loader('user_questions.json')
     decision_question_list = utils.json_loader('decision_questions.json')
@@ -40,16 +42,15 @@ def home():
             except:
                 pass
 
-        user = main.User()
         user.parse_responses(user_question_list)
         user.calculate_risk()
-        decision = main.Decision()
         decision.parse_responses(decision_question_list)
         decision.evaluate_responses()
         print(user.risk, decision.response_list)
 
     # Inputted values will be outputted to the screen when submit button is clicked [test]
-    return render_template("home.html", content=test_dict)
+    return render_template("home.html", content = test_dict, risk_score = user.risk,
+                           feedback = decision.response_list)
 
 
 

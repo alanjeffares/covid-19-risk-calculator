@@ -3,6 +3,7 @@ import utils
 
 class User:
     def __init__(self):
+        self.risk = None
         self.attributes = None
         self.city_infection_rate = 0.41
 
@@ -21,7 +22,7 @@ class User:
 
 class Decision:
     def __init__(self):
-        pass
+        self.response_list = None
 
     def parse_responses(self, qa_list: list):
         """Extract responses and set them as class attributes"""
