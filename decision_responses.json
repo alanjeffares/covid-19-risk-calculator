@@ -1,11 +1,11 @@
 {
   "activity": {
-    "house party": "bad house party",
-    "exercise - run, swim, cycle, walk": "fine exercise"
+    "house party": "This is a high-risk behaviour - you could cause significant COVID-19 transmission.",
+    "exercise - run, swim, cycle, walk": "This activity benefits your health and immunity and is a low risk transmission behaviour."
   },
   "duration": {
-      "15-60 mins":  "blah",
-      ">120 mins": "blah"
+      "15-60 mins":  "The shorter duration of your activity poses a lower risk.",
+      ">120 mins": "The long duration of this activity increases your risk of transmitting or contracting the disease."
     }
 }
 

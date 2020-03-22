@@ -46,12 +46,10 @@ def home():
         user.calculate_risk()
         decision.parse_responses(decision_question_list)
         decision.evaluate_responses()
-        print(user.risk, decision.response_list)
 
     # Inputted values will be outputted to the screen when submit button is clicked [test]
     return render_template("home.html", content = test_dict, risk_score = user.risk,
                            feedback = decision.response_list)
-
 
 
 if __name__ == "__main__":
