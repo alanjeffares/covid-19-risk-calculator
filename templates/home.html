@@ -22,12 +22,15 @@
         /* container */
         .container {
             width: 100%;
-            display: flex;
-            justify-content: center;
+            /* display: flex;
+            justify-content: center; */
+            position: relative;
+            float: left;
             border-radius: 5px;
             background-color: gainsboro;
             padding: 20px;
             align-items: center;
+            overflow: hidden;
         }
         .box_title{
            font-size: 25px;
@@ -40,10 +43,22 @@
             text-align: left;
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
             padding: 30px;
-            width: 500px;
+            width: 700px;
             height: 500px;
             margin: 10px;
             font-size: 20px;
+        }
+        .box_larger{
+            display: inline-block;
+            vertical-align: top;
+            background: white;
+            text-align: left;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 700px;
+            height: 800px;
+            margin: 10px;
+            font-size: 15px;
         }
 
 
@@ -52,14 +67,11 @@
             text-align: center;
             font-family: 'Source Sans Pro', sans-serif;
         }
-        /* form {
-            display: inline-block;
-        } */ 
+
         
         .selectdiv {
             position: relative;
             /*Don't really need this just for demo styling*/
-            
             float: left;
             min-width: 300px;
             margin: 10px;
@@ -79,6 +91,10 @@
             pointer-events: none;
         }
 
+        img{
+            width: 50px;
+            height: 50px;
+        }
             /* IE11 hide native button (thanks Matt!) */
         select::-ms-expand {
             display: none;
@@ -123,10 +139,21 @@
         input[type=submit]:hover {
             background-color: darkgreen;
         }
+        #hide{
+            display: none;
+        }
     </style>
 </head>
 
 <body>
+    <script>
+        function reveal(){
+            document.getElementById("hide").style.display = "";
+            return false;
+        }
+    
+    </script>
+
     <div class="top">
         <h1>Covid-19 Risk Calculator</h1>
       </div>
@@ -236,11 +263,31 @@
                 </div>
                     <br>
                     <br>
-                    <input type="submit">
+                    <input type="submit" onclick="reveal()">
                 </form>
 
-
-    
+                <div class="box">
+                    <div class="box_title">
+                        <h2>Results</h2>
+                    </div>
+                    <p>Your risk score indicates that you are at a high risk of transmitting COVID-19 or from significant consequences if you contract COVID-19 yourself.</p>
+                    <p> Your risk score is: {{ risk_score }}</p>
+                    <p>{{ feedback[0] }}</p>
+                    <p>{{ feedback[1] }}</p>
+                </div>
+                <div class="box_larger">
+                    <div class="box_title">
+                        <h2>Further info</h2>
+                    </div>
+                    <p>If we all make good decisions, we can flatten the curve:</p>
+                    <img src="/images/flatten_curve.png" alt="flatten curve">
+                    <p>Of these protective measures, social distancing, together with isolation of identified cases of COVID-19, is the safest long-term strategy for controlling the transmission of this coronavirus (orange line) and ensuring we don't critically exceed hospital capacity.</p>
+                    <img src="/images/pic2.png" alt="flatten curve">
+                    <p>If you transmit this coronavirus to one other person, one additional case today could directly lead to 2000 cases in under two months - this is called exponential growth. 2000 cases could lead to at least 200 hospitalisations, 80 admissions to ICU, and 20 deaths.</p>
+                    <img src="/images/pic3.png" alt="flatten curve">
+                    <p>If you personally make a good decision today, the benefit could be exponential!</p>
+                    <img src="/images/pic4.png" alt="flatten curve">
+                </div>
 
     </div>
 </div>  
