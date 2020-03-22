@@ -5,6 +5,8 @@ app=Flask(__name__)
 
 @app.route("/", methods=["GET","POST"])
 def home():
+    userQ = []
+    decisQ =[]
     # Activity form
     test_dict = {}
     user_question_list = utils.json_loader('user_questions.json')
@@ -24,11 +26,13 @@ def home():
 # When submit is clicked
     if request.method == "POST":
         
+        
         # loop through questions and store respective answers
         for idx in range(len(user_question_list)):
             id_ = user_question_list[idx]['id']
             try:
                 user_question_list[idx]['response'] = request.form[f'response_{id_}']
+                userQ.append(user_question_list[idx]['response'])
             except:
                 pass
 
@@ -36,12 +40,13 @@ def home():
             id_ = decision_question_list[idx]['id']
             try:
                 decision_question_list[idx]['response'] = request.form[f'response_{id_}']
+                decisQ.append(decision_question_list[idx]['response'])
             except:
                 pass
 
 
     # Inputted values will be outputted to the screen when submit button is clicked [test]
-    return render_template("home.html", content=test_dict)
+    return render_template("home.html", content=test_dict, user=userQ, decision=decisQ)
 
 
 if __name__ == "__main__":
