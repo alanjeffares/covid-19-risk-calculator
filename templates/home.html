@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+    <title>Covid-19 Risk calculator</title>
+
+    
+</head>
+
+<body>
+    <div class="questions">
+    <!-- Activity form -->
+        <form class="activity">
+    <!-- Specific activity -->
+            Activity:
+            <select id="action" name="action">
+                <option>House party</option>
+                <option>Run</option>
+                <option>groccery shopping</option>
+            </select>
+    <!-- Activity duration -->
+              <br>
+              Duration:
+              <select id="duration" name="duration">
+              </select>
+        </form>
+        <br>
+    <!-- profile form -->
+        <form class="profile">
+    <!-- Age -->
+            Age:
+            <select id="age" name="age">
+            </select>
+            <br>
+    <!-- Gender -->
+            Gender:
+            <br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+    <!-- Medical risk -->
+            Medical Risk:
+            <select id="medical risk" name="medical risk">
+                <option>None</option>
+                <option>Type 1 Diabetes</option>
+                <option>Type 2 Diabetes</option>
+                <option>Cancer</option>
+            </select>
+            <br>
+           
+    <!-- Symptoms -->
+            Symptoms:
+            <br>
+            <input type="checkbox" id="Symptom1" name="vehicle1">
+            <label for="Symptom1"> None </label><br>
+            <input type="checkbox" id="Symptom2" name="vehicle2">
+            <label for="Symptom"> acute onset cough</label><br>
+            <input type="checkbox" id="Symptom3" name="vehicle3">
+            <label for="Symptom3"> shortness of breath</label><br>
+            <input type="checkbox" id="Symptom4" name="vehicle3">
+            <label for="Symptom4"> fatigue</label><br>
+            <input type="checkbox" id="Symptom5" name="vehicle3">
+            <label for="Symptom5"> muscle aches/pains</label><br>
+
+        </form>
+
+    </div>
+
+
+    <script>
+
+        function age(){
+            var select = '';
+            for (i=1;i<=100;i++){
+                select += '<option val=' + i + '>' + i + '</option>';
+            }
+            document.getElementById("age").innerHTML = select;
+        }
+    
+        function duration(){
+            var temp ="";
+            for (i=5;i<=180;i= i+5){
+                temp += '<option val=' + i + '>' + i + '</option>';
+            }
+            document.getElementById("duration").innerHTML = temp;
+        }
+        age();
+        duration();
+        
+    
+    </script>
+</body>
+
+</html>
