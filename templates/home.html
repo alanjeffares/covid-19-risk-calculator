@@ -19,10 +19,10 @@
 <body>
     <div class="questions">
     <!-- Activity form -->
-        <form class="activity">
+        <form action="" method="post">
     <!-- Specific activity -->
             Activity:
-            <select id="action" name="action">
+            <select id="action" name="activity">
                 <option>House party</option>
                 <option>Run</option>
                 <option>groccery shopping</option>
@@ -32,7 +32,13 @@
               Duration:
               <select id="duration" name="duration">
               </select>
+              <br>
+              <input type="submit">
         </form>
+
+        <br>
+        <p>Activity selected: {{ activity }}</p>
+        <p>Duration selected: {{ duration }}</p>
         <br>
     <!-- profile form -->
         <form class="profile">
@@ -89,8 +95,8 @@
     
         function duration(){
             var temp ="";
-            for (i=5;i<=180;i= i+5){
-                temp += '<option val=' + i + '>' + i + '</option>';
+            for (i=10;i<=60;i= i+10){
+                temp += '<option val="{{request.form.duration}}">' + i + '</option>';
             }
             document.getElementById("duration").innerHTML = temp;
         }
