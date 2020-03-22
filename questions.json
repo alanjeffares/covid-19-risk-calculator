@@ -1,0 +1,22 @@
+[
+{
+  "id": 1,
+  "question_type": "checkbox",
+  "question_text": "Age?",
+  "answers": [
+    "<15",
+    "15-49",
+    "50-64",
+    "65+"
+  ]
+},
+  {
+  "id": 2,
+  "question_type": "checkbox",
+  "question_text": "Gender?",
+  "answers": [
+    "Male",
+    "Female"
+  ]
+  }
+]
