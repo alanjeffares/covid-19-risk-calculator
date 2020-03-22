@@ -32,7 +32,7 @@
   "local_risk": {
     "None": 1,
     "Close contact of a case at home": null,
-    "At-risk individual in close proximity": null
+    "At-risk individual in close proximity": 3
   }
 }
 
