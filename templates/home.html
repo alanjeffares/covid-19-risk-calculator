@@ -2,130 +2,249 @@
 <html>
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    <!--CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
     <title>Covid-19 Risk calculator</title>
 
+    <style>
     
+       
+        /* Header/Logo Title */
+        .top {
+            width:100%;
+            padding: 30px;
+            text-align: center;
+            background: #1abc9c;
+            color: white;
+            font-size: 30px;
+        }
+        /* container */
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            border-radius: 5px;
+            background-color: gainsboro;
+            padding: 20px;
+            align-items: center;
+        }
+        .box_title{
+           font-size: 25px;
+           text-align: center;
+        }
+        .box{
+            display: inline-block;
+            vertical-align: top;
+            background: white;
+            text-align: left;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 500px;
+            height: 500px;
+            margin: 10px;
+            font-size: 20px;
+        }
+
+
+
+         body{
+            text-align: center;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        /* form {
+            display: inline-block;
+        } */ 
+        
+        .selectdiv {
+            position: relative;
+            /*Don't really need this just for demo styling*/
+            
+            float: left;
+            min-width: 300px;
+            margin: 10px;
+            /* margin: 50px 33%; */
+            }
+
+        .selectdiv:after {
+            content: '\f078';
+            font: normal normal normal 17px/1 FontAwesome;
+            color: #0ebeff;
+            right: 11px;
+            top: 6px;
+            height: 34px;
+            padding: 15px 0px 0px 8px;
+            border-left: 1px solid #0ebeff;
+            position: absolute;
+            pointer-events: none;
+        }
+
+            /* IE11 hide native button (thanks Matt!) */
+        select::-ms-expand {
+            display: none;
+        }
+
+        .selectdiv select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            /* Add some styling */
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            height: 50px;
+            float: right;
+            margin: 5px 0px;
+            padding: 0px 24px;
+            font-size: 16px;
+            line-height: 1.75;
+            color: #333;
+            background-color: #ffffff;
+            background-image: none;
+            border: 1px solid #0ebeff;
+            -ms-word-break: normal;
+            word-break: normal;
+            }
+            
+
+        /* Style the submit button */
+        input[type=submit] {
+            width: 30%;
+            background-color: #1abc9c;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Add a background color to the submit button on mouse-over */
+        input[type=submit]:hover {
+            background-color: darkgreen;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="questions">
+    <div class="top">
+        <h1>Covid-19 Risk Calculator</h1>
+      </div>
 
-    <!-- profile form -->
-    <form action="" method="post">
-        <!-- Age -->
-                <p> {{ content.question_1.question_text }}</p>
-                <select id="age" name="response_{{ content['question_1']['id']}}">
-                    {% for option in content.question_1.answers %}
-                        <option> {{option}} </option>
-                    {%endfor%}
-                </select>
-                <br>
-        <!-- Gender -->
-                <p> {{ content.question_2.question_text }}</p>
-                <input type="radio" id="male" name="response_{{ content['question_2']['id']}}" value="male">
-                <label for="male">Male</label><br>
-                <input type="radio" id="female" name="response_{{ content['question_2']['id']}}"value="female">
-                <label for="female">Female</label><br>
-        <!-- Medical risk -->
-                <br>
-                <p> {{ content.question_3.question_text }}</p>
-                <select id="medical risk" name="response_{{ content['question_3']['id']}}">
-                    {% for option in content.question_3.answers %}
-                        <option> {{option}} </option>
-                    {%endfor%}
-                </select>
-                <br>
-     
-        <!-- Symptoms -->
-                <!-- <input type="checkbox" id="Symptom1" value="None" name="response_{{ content['question_4']['id']}}">
-                <label for="Symptom1"> None </label><br>
-                <input type="checkbox" id="Symptom2" value="acute onset cough" name="response_{{ content['question_4']['id']}}">
-                <label for="Symptom"> acute onset cough</label><br>
-                <input type="checkbox" id="Symptom3" value="shortness of breath" name="response_{{ content['question_4']['id']}}">
-                <label for="Symptom3"> shortness of breath</label><br>
-                <input type="checkbox" id="Symptom4" value="fatigue" name="response_{{ content['question_4']['id']}}">
-                <label for="Symptom4"> fatigue</label><br>
-                <input type="checkbox" id="Symptom5" value="muscle aches/pains" name="response_{{ content['question_4']['id']}}">
-                <label for="Symptom5"> muscle aches/pains</label><br> -->
-                <br>
-                <p> {{ content.question_4.question_text }}</p>
-                <select id="action" name="response_{{ content['question_4']['id']}}">
-                    {% for option in content.question_4.answers %}
-                            <option> {{option}} </option>
-                    {%endfor%}
-                </select>
+
+    <div class="wrapper">
+        <div class="container">
+
+        <!-- profile form -->
+        <form action="" method="post">
+            <div class = "box">
+                <div class="box_title">
+                    <h2>Personal</h2>
+                </div>
+
+            <!-- Age -->
                 
-                <br>
-
-            <!-- Local Risk -->
-                <br>
-                <p> {{ content.question_5.question_text }}</p>
-                <select id="local risk" name="response_{{ content['question_5']['id']}}">
-                    {% for option in content.question_5.answers %}
-                        <option> {{option}} </option>
-                    {%endfor%}
-                </select>
-                <br>
-                <br>
-
-        <!-- Specific activity -->
-                <p> {{ content.question_6.question_text }}</p>
-                <select id="action" name="response_{{ content['question_6']['id']}}">
-                    {% for option in content.question_6.answers %}
+                <p> {{ content.question_1.question_text }}</p>
+                    <div class = "selectdiv">
+                    <select id="age" name="response_{{ content['question_1']['id']}}">
+                        {% for option in content.question_1.answers %}
                             <option> {{option}} </option>
-                    {%endfor%}
-                </select>
-                <br>
-        <!-- Activity duration -->
-                  <br>
-                  <p> {{ content.question_7.question_text }}</p>
-                  <select id="duration" name="response_{{ content['question_7']['id']}}">
-                    {% for option in content.question_7.answers %}
-                        <option> {{option}} </option>
-                    {%endfor%}
-                  </select>
-                  <br>
-                  <br>
-                  <input type="submit">
-            </form>
+                        {%endfor%}
+                    </select>
+
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+            <!-- Gender -->
+                    <p> {{ content.question_2.question_text }}</p>
+                    <input type="radio" id="male" name="response_{{ content['question_2']['id']}}" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" id="female" name="response_{{ content['question_2']['id']}}"value="female">
+                    <label for="female">Female</label><br>
+            </div>
+            <div class = "box">
+                <div class="box_title">
+                    <h2>medical</h2>
+                </div>
+            <!-- Medical risk -->
+                    <p> {{ content.question_3.question_text }}</p>
+                    <div class = "selectdiv">
+                    <select id="medical risk" name="response_{{ content['question_3']['id']}}">
+                        {% for option in content.question_3.answers %}
+                            <option> {{option}} </option>
+                        {%endfor%}
+                    </select>
+                    </div>
+                    <br>
+                    <br>
+
+        
+            <!-- Symptoms -->
+                    <br>
+                    <p> {{ content.question_4.question_text }}</p>
+                    <div class = "selectdiv">
+                    <select id="action" name="response_{{ content['question_4']['id']}}">
+                        {% for option in content.question_4.answers %}
+                                <option> {{option}} </option>
+                        {%endfor%}
+                    </select>
+                    </div>
+                    <br>
+  
+                    <br>
+
+                <!-- Local Risk -->
+                    <br>
+                    <p> {{ content.question_5.question_text }}</p>
+                    <div class = "selectdiv">
+                    <select id="local risk" name="response_{{ content['question_5']['id']}}">
+                        {% for option in content.question_5.answers %}
+                            <option> {{option}} </option>
+                        {%endfor%}
+                    </select>
+                    </div>
+                    <br>
+                    <br>
+            </div>
+
+            <div class="box">
+                <div class="box_title">
+                    <h2>Activity</h2>
+                </div>
+            <!-- Specific activity -->
+                    <p> {{ content.question_6.question_text }}</p>
+                    <div class = "selectdiv">
+                    <select id="action" name="response_{{ content['question_6']['id']}}">
+                        {% for option in content.question_6.answers %}
+                                <option> {{option}} </option>
+                        {%endfor%}
+                    </select>
+                    </div>
+                    <br>
+                    <br>
+            <!-- Activity duration -->
+                    <br>
+                    <p> {{ content.question_7.question_text }}</p>
+                    <div class = "selectdiv">
+                    <select id="duration" name="response_{{ content['question_7']['id']}}">
+                        {% for option in content.question_7.answers %}
+                            <option> {{option}} </option>
+                        {%endfor%}
+                    </select>
+                    </div>
+                </div>
+                    <br>
+                    <br>
+                    <input type="submit">
+                </form>
 
 
     
 
     </div>
+</div>  
 
-
-    <script>
-
-        // function age(){
-        //     var select = '';
-        //     for (i=1;i<=100;i++){
-        //         select += '<option val=' + i + '>' + i + '</option>';
-        //     }
-        //     document.getElementById("age").innerHTML = select;
-        // }
-    
-        // function duration(){
-        //     var temp ="";
-        //     for (i=10;i<=60;i= i+10){
-        //         temp += '<option val="{{request.form.duration}}">' + i + '</option>';
-        //     }
-        //     document.getElementById("duration").innerHTML = temp;
-        // }
-        // age();
-        // duration();
-        
-    
-    </script>
 </body>
 
 </html>
