@@ -1,0 +1,11 @@
+{
+  "activity": {
+    "house party": "bad house party",
+    "exercise - run, swim, cycle, walk": "fine exercise"
+  },
+  "duration": {
+      "15-60 mins":  "blah",
+      ">120 mins": "blah"
+    }
+}
+

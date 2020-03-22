@@ -27,6 +27,7 @@
     "question_type": "checkbox",
     "question_text": "Medical risks",
     "answers": [
+      "None",
       "Type 1 Diabetes",
       "Type 2 Diabetes",
       "High blood pressure",
@@ -43,7 +44,8 @@
     "question_type": "checkbox",
     "question_text": "Symptoms",
     "answers": [
-      "Acute onset cough",
+      "None",
+      "New, acute onset cough",
       "fever",
       "shortness of breath",
       "fatigue",

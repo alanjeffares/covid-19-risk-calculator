@@ -1,0 +1,38 @@
+{
+  "age": {
+    "<15": null,
+    "15-49":  1,
+    "50-64":  3.52,
+    "65+": null
+  },
+  "gender": {
+      "male":  1.3,
+      "Female": 1
+    },
+  "medical_risks": {
+    "None": 1,
+    "Type 1 Diabetes": 2.71,
+    "Type 2 Diabetes": null,
+    "High blood pressure": null,
+    "Heart disease": null,
+    "Cancer / History of cancer treatment": null,
+    "Chronic lung disease (Asthma / COPD)": null,
+    "Ongoing steroid treatment": null,
+    "Immunosuppressing medication": null
+  },
+  "symptoms": {
+    "None": 1,
+    "New, acute onset cough": 3,
+    "fever":  null,
+    "shortness of breath":  null,
+    "fatigue":  null,
+    "muscle aches": null,
+    "pains": null
+  },
+  "local_risk": {
+    "None": 1,
+    "Close contact of a case at home": null,
+    "At-risk individual in close proximity": null
+  }
+}
+
