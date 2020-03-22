@@ -22,7 +22,7 @@
         <form action="" method="post">
     <!-- Specific activity -->
             Activity:
-            <select id="action" name="activity">
+            <select id="action" name="response_{{ content['question_1']['id']}}">
                 <option>House party</option>
                 <option>Run</option>
                 <option>groccery shopping</option>
@@ -30,33 +30,32 @@
     <!-- Activity duration -->
               <br>
               Duration:
-              <select id="duration" name="duration">
+              <select id="duration" name="response_{{ content['question_2']['id']}}">
               </select>
               <br>
               <input type="submit">
         </form>
 
         <br>
-        <p>Activity selected: {{ activity }}</p>
-        <p>Duration selected: {{ duration }}</p>
+
         <br>
     <!-- profile form -->
-        <form class="profile">
+        <form action="" method="post">
     <!-- Age -->
             Age:
-            <select id="age" name="age">
+            <select id="age" name="response_{{ content['question_3']['id']}}">
             </select>
             <br>
     <!-- Gender -->
             Gender:
             <br>
-            <input type="radio" id="male" name="gender" value="male">
+            <input type="radio" id="male" name="response_{{ content['question_4']['id']}}" value="male">
             <label for="male">Male</label><br>
-            <input type="radio" id="female" name="gender" value="female">
+            <input type="radio" id="female" name="response_{{ content['question_4']['id']}}"value="female">
             <label for="female">Female</label><br>
     <!-- Medical risk -->
             Medical Risk:
-            <select id="medical risk" name="medical risk">
+            <select id="medical risk" name="response_{{ content['question_5']['id']}}">
                 <option>None</option>
                 <option>Type 1 Diabetes</option>
                 <option>Type 2 Diabetes</option>
@@ -67,17 +66,18 @@
     <!-- Symptoms -->
             Symptoms:
             <br>
-            <input type="checkbox" id="Symptom1" name="vehicle1">
+            <input type="checkbox" id="Symptom1" value="None" name="response_{{ content['question_6']['id']}}">
             <label for="Symptom1"> None </label><br>
-            <input type="checkbox" id="Symptom2" name="vehicle2">
+            <input type="checkbox" id="Symptom2" value="acute onset cough" name="response_{{ content['question_6']['id']}}">
             <label for="Symptom"> acute onset cough</label><br>
-            <input type="checkbox" id="Symptom3" name="vehicle3">
+            <input type="checkbox" id="Symptom3" value="shortness of breath" name="response_{{ content['question_6']['id']}}">
             <label for="Symptom3"> shortness of breath</label><br>
-            <input type="checkbox" id="Symptom4" name="vehicle3">
+            <input type="checkbox" id="Symptom4" value="fatigue" name="response_{{ content['question_6']['id']}}">
             <label for="Symptom4"> fatigue</label><br>
-            <input type="checkbox" id="Symptom5" name="vehicle3">
+            <input type="checkbox" id="Symptom5" value="muscle aches/pains" name="response_{{ content['question_6']['id']}}">
             <label for="Symptom5"> muscle aches/pains</label><br>
 
+            <input type="submit">
         </form>
 
     </div>
