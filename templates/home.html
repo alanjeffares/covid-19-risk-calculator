@@ -31,12 +31,12 @@
                 <br>
         <!-- Gender -->
                 <p> {{ content.question_2.question_text }}</p>
-                <br>
                 <input type="radio" id="male" name="response_{{ content['question_2']['id']}}" value="male">
                 <label for="male">Male</label><br>
                 <input type="radio" id="female" name="response_{{ content['question_2']['id']}}"value="female">
                 <label for="female">Female</label><br>
         <!-- Medical risk -->
+                <br>
                 <p> {{ content.question_3.question_text }}</p>
                 <select id="medical risk" name="response_{{ content['question_3']['id']}}">
                     {% for option in content.question_3.answers %}
@@ -46,8 +46,6 @@
                 <br>
      
         <!-- Symptoms -->
-                <p> {{ content.question_4.question_text }}</p>
-                <br>
                 <!-- <input type="checkbox" id="Symptom1" value="None" name="response_{{ content['question_4']['id']}}">
                 <label for="Symptom1"> None </label><br>
                 <input type="checkbox" id="Symptom2" value="acute onset cough" name="response_{{ content['question_4']['id']}}">
@@ -58,44 +56,48 @@
                 <label for="Symptom4"> fatigue</label><br>
                 <input type="checkbox" id="Symptom5" value="muscle aches/pains" name="response_{{ content['question_4']['id']}}">
                 <label for="Symptom5"> muscle aches/pains</label><br> -->
-                <p> {{ content.question_4.question_text }}</p>
                 <br>
+                <p> {{ content.question_4.question_text }}</p>
                 <select id="action" name="response_{{ content['question_4']['id']}}">
                     {% for option in content.question_4.answers %}
                             <option> {{option}} </option>
                     {%endfor%}
                 </select>
-    
-                <input type="submit">
+                
+                <br>
 
             <!-- Local Risk -->
-                <p> {{ content.question_3.question_text }}</p>
+                <br>
+                <p> {{ content.question_5.question_text }}</p>
                 <select id="local risk" name="response_{{ content['question_5']['id']}}">
                     {% for option in content.question_3.answers %}
                         <option> {{option}} </option>
                     {%endfor%}
                 </select>
-            </form>
-
+                <br>
+                <br>
+                <input type="submit">
+        </form>
+        <br>
     <!-- Activity form -->
         <form action="" method="post">
     <!-- Specific activity -->
             <p> {{ content.question_6.question_text }}</p>
-            <br>
             <select id="action" name="response_{{ content['question_6']['id']}}">
                 {% for option in content.question_6.answers %}
                         <option> {{option}} </option>
                 {%endfor%}
             </select>
+            <br>
     <!-- Activity duration -->
               <br>
               <p> {{ content.question_7.question_text }}</p>
-              <br>
               <select id="duration" name="response_{{ content['question_6']['id']}}">
                 {% for option in content.question_7.answers %}
                     <option> {{option}} </option>
                 {%endfor%}
               </select>
+              <br>
               <br>
               <input type="submit">
         </form>
