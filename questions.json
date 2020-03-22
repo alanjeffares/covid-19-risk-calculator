@@ -1,7 +1,7 @@
 [
 {
   "id": 1,
-  "question_type": "checkbox",
+  "question_type": "radiobuttons",
   "question_text": "Age?",
   "answers": [
     "<15",
@@ -11,12 +11,64 @@
   ]
 },
   {
-  "id": 2,
+    "id": 2,
+    "question_type": "radiobuttons",
+    "question_text": "Gender?",
+    "answers": [
+      "Male",
+      "Female"
+    ]
+  },
+  {
+  "id": 3,
   "question_type": "checkbox",
-  "question_text": "Gender?",
+  "question_text": "Medical risks",
   "answers": [
-    "Male",
-    "Female"
+    "Type 1 Diabetes",
+    "Type 2 Diabetes",
+    "High blood pressure",
+    "Heart disease",
+    "Cancer / History of cancer treatment",
+    "Chronic lung disease (Asthma / COPD)",
+    "Ongoing steroid treatment",
+    "Immunosuppressing medication"
   ]
+  },
+  {
+  "id": 4,
+  "question_type": "checkbox",
+  "question_text": "Symptoms",
+  "answers": [
+    "Acute onset cough",
+    "fever",
+    "shortness of breath",
+    "fatigue",
+    "muscle aches",
+    "pains"
+  ]
+  },
+  {
+  "id": 5,
+  "question_type": "checkbox",
+  "question_text": "Symptoms",
+  "answers": [
+    "None",
+    "Acute onset cough",
+    "fever",
+    "shortness of breath",
+    "fatigue",
+    "muscle aches",
+    "pains"
+  ]
+  },
+  {
+    "id": 6,
+    "question_type": "checkbox",
+    "question_text": "Local Risk",
+    "answers": [
+      "None",
+      "Close contact of a case at home",
+      "At-risk individual in close proximity"
+    ]
   }
 ]
