@@ -20,46 +20,46 @@
     ]
   },
   {
-  "id": 3,
-  "question_type": "checkbox",
-  "question_text": "Medical risks",
-  "answers": [
-    "Type 1 Diabetes",
-    "Type 2 Diabetes",
-    "High blood pressure",
-    "Heart disease",
-    "Cancer / History of cancer treatment",
-    "Chronic lung disease (Asthma / COPD)",
-    "Ongoing steroid treatment",
-    "Immunosuppressing medication"
-  ]
+    "id": 3,
+    "question_type": "checkbox",
+    "question_text": "Medical risks",
+    "answers": [
+      "Type 1 Diabetes",
+      "Type 2 Diabetes",
+      "High blood pressure",
+      "Heart disease",
+      "Cancer / History of cancer treatment",
+      "Chronic lung disease (Asthma / COPD)",
+      "Ongoing steroid treatment",
+      "Immunosuppressing medication"
+    ]
   },
   {
-  "id": 4,
-  "question_type": "checkbox",
-  "question_text": "Symptoms",
-  "answers": [
-    "Acute onset cough",
-    "fever",
-    "shortness of breath",
-    "fatigue",
-    "muscle aches",
-    "pains"
-  ]
+    "id": 4,
+    "question_type": "checkbox",
+    "question_text": "Symptoms",
+    "answers": [
+      "Acute onset cough",
+      "fever",
+      "shortness of breath",
+      "fatigue",
+      "muscle aches",
+      "pains"
+    ]
   },
   {
-  "id": 5,
-  "question_type": "checkbox",
-  "question_text": "Symptoms",
-  "answers": [
-    "None",
-    "Acute onset cough",
-    "fever",
-    "shortness of breath",
-    "fatigue",
-    "muscle aches",
-    "pains"
-  ]
+    "id": 5,
+    "question_type": "checkbox",
+    "question_text": "Symptoms",
+    "answers": [
+      "None",
+      "Acute onset cough",
+      "fever",
+      "shortness of breath",
+      "fatigue",
+      "muscle aches",
+      "pains"
+    ]
   },
   {
     "id": 6,
