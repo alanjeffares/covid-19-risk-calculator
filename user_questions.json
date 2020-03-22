@@ -1,6 +1,7 @@
 [
 {
   "id": 1,
+  "attribute_name": "age",
   "question_type": "radiobuttons",
   "question_text": "Age?",
   "answers": [
@@ -12,6 +13,7 @@
 },
   {
     "id": 2,
+    "attribute_name": "gender",
     "question_type": "radiobuttons",
     "question_text": "Gender?",
     "answers": [
@@ -21,6 +23,7 @@
   },
   {
     "id": 3,
+    "attribute_name": "medical_risks",
     "question_type": "checkbox",
     "question_text": "Medical risks",
     "answers": [
@@ -36,6 +39,7 @@
   },
   {
     "id": 4,
+    "attribute_name": "symptoms",
     "question_type": "checkbox",
     "question_text": "Symptoms",
     "answers": [
@@ -49,20 +53,7 @@
   },
   {
     "id": 5,
-    "question_type": "checkbox",
-    "question_text": "Symptoms",
-    "answers": [
-      "None",
-      "Acute onset cough",
-      "fever",
-      "shortness of breath",
-      "fatigue",
-      "muscle aches",
-      "pains"
-    ]
-  },
-  {
-    "id": 6,
+    "attribute_name": "local_risk",
     "question_type": "checkbox",
     "question_text": "Local Risk",
     "answers": [

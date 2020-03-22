@@ -1,0 +1,29 @@
+[
+{
+  "id": 6,
+  "attribute_name": "activity",
+  "question_type": "radiobuttons",
+  "question_text": "What activity are you interested in?",
+  "answers": [
+    "Grocery shopping - small store",
+    "Grocery shopping - supermarket",
+    "Minor essential errand e.g. hardware shop",
+    "Non-essential - off-licence",
+    "Medical visit e.g. pharmacy, GP etc.",
+    "exercise - run, swim, cycle, walk",
+    "house party"
+  ]
+},
+  {
+    "id": 7,
+    "attribute_name": "duration",
+    "question_type": "radiobuttons",
+    "question_text": "How long?",
+    "answers": [
+      "<15 minutes",
+      "15-60 mins",
+      "60-120 mins",
+      ">120 mins"
+    ]
+  }
+]
